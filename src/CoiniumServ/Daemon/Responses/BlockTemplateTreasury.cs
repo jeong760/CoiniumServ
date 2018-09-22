@@ -41,7 +41,7 @@ namespace CoiniumServ.Daemon.Responses
         /// <summary>
         /// The block height of the treasury payment
         /// </summary>
-        public int[] Height { get; set; }
+        public int Height { get; set; }
         
         /// <summary>
         /// the address of the treasury recipient

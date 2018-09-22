@@ -99,12 +99,12 @@ namespace CoiniumServ.Daemon.Responses
         /// <summary>
         /// treasury object for paying coins that require treasury
         /// </summary>
-        public BlockTemplateTreasury[] Treasury { get; set; }
+        public BlockTemplateTreasury Treasury { get; set; }
         
         /// <summary>
         /// masternode object for paying coins that require masternode payments
         /// </summary>
-        public BlockTemplateMasternode[] Masternode { get; set; }
+        public BlockTemplateMasternode Masternode { get; set; }
 
         /// <summary>
         /// if provided, this value must be returned with results (see Block Submission)
