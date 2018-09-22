@@ -46,7 +46,7 @@ namespace CoiniumServ.Daemon.Responses
         /// <summary>
         /// The masternode pubkey script
         /// </summary>
-        public string Script { get; set; }
+        public byte[] Script { get; set; }
 
         /// <summary>
         /// The masternode payee amount

@@ -51,7 +51,7 @@ namespace CoiniumServ.Daemon.Responses
         /// <summary>
         /// The scriptPubKey of the treasury address.
         /// </summary>
-        public string ScriptPubKey { get; set; }
+        public byte[] ScriptPubKey { get; set; }
 
         /// <summary>
         /// The treasury amount, that must be paid
@@ -61,6 +61,6 @@ namespace CoiniumServ.Daemon.Responses
         /// <summary>
         /// The raw hex TXOutput
         /// </summary>
-        public string Hex { get; set; }
+        public byte[] Hex { get; set; }
     }
 }

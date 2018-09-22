@@ -177,19 +177,31 @@ namespace CoiniumServ.Transactions
             }
             
             // If there is no treasury, skip it.
-            if(BlockTemplate.Treasury[0].Amount != 0)
+            if(BlockTemplate.Treasury.Amount != 0)
             {
-                blockReward -= BlockTemplate.Treasury[0].Amount;
+                blockReward -= BlockTemplate.Treasury.Amount;
 
-                Outputs.AddRecipient(BlockTemplate.Treasury[0].Address, BlockTemplate.Treasury[0].Amount);
+                var txOut = new TxOut
+                {
+                    Value = ((UInt64)BlockTemplate.Treasury.Amount).LittleEndian(),
+                    PublicKeyScriptLenght = Serializers.VarInt((UInt32)BlockTemplate.Treasury.ScriptPubKey.Length),
+                    PublicKeyScript = BlockTemplate.Treasury.ScriptPubKey
+                };
+                Outputs.List.Add(txOut);
             }
             
             // If there is no masternode skip it.
-            if(BlockTemplate.Masternode[0].Amount != 0)
+            if(BlockTemplate.Masternode.Amount != 0)
             {
-                blockReward -= BlockTemplate.Masternode[0].Amount;
+                blockReward -= BlockTemplate.Masternode.Amount;
 
-                Outputs.AddRecipient(BlockTemplate.Masternode[0].Payee, BlockTemplate.Masternode[0].Amount);
+                var txOut = new TxOut
+                {
+                    Value = ((UInt64)BlockTemplate.Masternode.Amount).LittleEndian(),
+                    PublicKeyScriptLenght = Serializers.VarInt((UInt32)BlockTemplate.Masternode.Script.Length),
+                    PublicKeyScript = BlockTemplate.Masternode.Script
+                };
+                Outputs.List.Add(txOut);
             }
 
             // send the remaining coins to pool's central wallet.
