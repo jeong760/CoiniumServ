@@ -177,19 +177,19 @@ namespace CoiniumServ.Transactions
             }
             
             // If there is no treasury, skip it.
-            if(BlockTemplate.Treasury.Amount != NULL)
+            if(BlockTemplate.Treasury[0].Amount != 0)
             {
-                blockReward -= BlockTemplate.Treasury.Amount;
+                blockReward -= BlockTemplate.Treasury[0].Amount;
 
-                Outputs.AddRecipient(BlockTemplate.Treasury.Address, BlockTemplate.Treasury.Amount);
+                Outputs.AddRecipient(BlockTemplate.Treasury[0].Address, BlockTemplate.Treasury[0].Amount);
             }
             
             // If there is no masternode skip it.
-            if(BlockTemplate.Masternode.Amount != 0)
+            if(BlockTemplate.Masternode[0].Amount != 0)
             {
-                blockReward -= BlockTemplate.Masternode.Amount;
+                blockReward -= BlockTemplate.Masternode[0].Amount;
 
-                Outputs.AddRecipient(BlockTemplate.Masternode.Ppayee, BlockTemplate.Masternode.Amount);
+                Outputs.AddRecipient(BlockTemplate.Masternode[0].Payee, BlockTemplate.Masternode[0].Amount);
             }
 
             // send the remaining coins to pool's central wallet.
