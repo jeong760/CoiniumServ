@@ -217,6 +217,8 @@
     <Compile Include="Daemon\Responses\Block.cs" />
     <Compile Include="Daemon\Responses\BlockTemplate.cs" />
     <Compile Include="Daemon\Responses\BlockTemplateTransaction.cs" />
+    <Compile Include="Daemon\Responses\BlockTemplateTreasury.cs" />
+    <Compile Include="Daemon\Responses\BlockTemplateMasternode.cs" />
     <Compile Include="Daemon\Responses\DecodedRawTransaction.cs" />
     <Compile Include="Daemon\Responses\GetAddressInfo.cs" />
     <Compile Include="Daemon\Responses\Getwork.cs" />

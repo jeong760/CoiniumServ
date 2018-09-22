@@ -57,6 +57,10 @@ namespace CoiniumServ.Daemon.Responses
         Int64 Coinbasevalue { get; set; }
 
         int WorkId { get; set; }
+        
+        BlockTemplateTreasury[] Treasury { get; set; }
+        
+        BlockTemplateMasternode[] Masternode { get; set; }
 
         string Target { get; set; }
 
