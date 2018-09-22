@@ -95,6 +95,16 @@ namespace CoiniumServ.Daemon.Responses
         /// total funds available for the coinbase (in Satoshis)
         /// </summary>
         public Int64 Coinbasevalue { get; set; }
+        
+        /// <summary>
+        /// treasury object for paying coins that require treasury
+        /// </summary>
+        public BlockTemplateTreasury[] Treasury { get; set; }
+        
+        /// <summary>
+        /// masternode object for paying coins that require masternode payments
+        /// </summary>
+        public BlockTemplateMasternode[] Masternode { get; set; }
 
         /// <summary>
         /// if provided, this value must be returned with results (see Block Submission)
