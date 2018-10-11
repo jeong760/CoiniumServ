@@ -58,9 +58,9 @@ namespace CoiniumServ.Daemon.Responses
 
         int WorkId { get; set; }
         
-        BlockTemplateTreasury[] Treasury { get; set; }
+        BlockTemplateTreasury Treasury { get; set; }
         
-        BlockTemplateMasternode[] Masternode { get; set; }
+        BlockTemplateMasternode Masternode { get; set; }
 
         string Target { get; set; }
 
